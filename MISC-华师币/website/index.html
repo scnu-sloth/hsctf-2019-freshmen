@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>华师币 SCNU Coin</title>
+</head>
+<body>
+<h1>华师币 SCNU Coin</h1>
+<!--没有预算，界面丑一点也可以-->
+<div>
+  <p>欢迎使用华师币！属于华师人的区块链数字货币！</p>
+  <p>您的钱包地址是 <code id="txt-address">...</code></p>
+  <p>您的学号是 <code id="txt-student-id">...</code></p>
+  <p>您的华师币余额是 <code id="txt-balance">...</code> 华师币</p>
+
+  <div id="page-reg" style="display: none">
+    <h2>注册绑定身份</h2>
+    <div>
+      <label for="input-reg-student-id">学号</label>
+      <input type="text" id="input-reg-student-id" required>
+    </div>
+    <div>
+      <label for="input-reg-invitor">邀请人钱包地址</label>
+      <input type="text" id="input-reg-invitor" required>
+    </div>
+    <div>
+      <button type="button" id="btn-reg">注册</button>
+    </div>
+    <div>
+      <strong>华师币新上线大优惠！新注册用户即刻获得500华师币，邀请注册双方都可以获得3000华师币，赶紧来注册吧！</strong>
+    </div>
+  </div>
+  <div id="page-main" style="display: none">
+    <h2>转账</h2>
+    <div>
+      <label for="input-transfer-to">收款人钱包地址</label>
+      <input type="text" id="input-transfer-to" required>
+    </div>
+    <div>
+      <label for="input-transfer-amount">转账金额</label>
+      <input type="number" id="input-transfer-amount" required>
+    </div>
+    <div>
+      <button type="button" id="btn-transfer">立即转账</button>
+    </div>
+
+    <h2>捐款给母校</h2>
+    <div>
+      <p>我爱你华师！欢迎各位校友捐款资助华师，为华师建设添砖加瓦！</p>
+    </div>
+    <div>
+      <label for="input-donate-amount">捐款金额</label>
+      <input type="number" id="input-donate-amount" required>
+    </div>
+    <div>
+      <button type="button" id="btn-donate">立即捐款</button>
+    </div>
+
+    <h2>大乐透</h2>
+    <div>
+      <p>使用1000华师币就可以抽奖，赶紧来试试吧！</p>
+    </div>
+    <div>
+      <button type="button" id="btn-gacha">购买一张彩券并兑奖</button>
+    </div>
+
+    <h2>购买Flag</h2>
+    <div>
+      <p>你需要拥有888888华师币，才可以购买Flag</p>
+    </div>
+    <div>
+      <button type="button" id="btn-buy-flag">购买Flag</button>
+    </div>
+    <div id="txt-flag"></div>
+  </div>
+
+  <script src="https://cdn.ethers.io/scripts/ethers-v4.min.js"
+          charset="utf-8"
+          type="text/javascript">
+  </script>
+  <script src="abi.js"></script>
+  <script src="app.js"></script>
+</div>
+</body>
+</html>

@@ -2,7 +2,7 @@
 
 ## 概括
 
-- 出题人：罗裴然
+- 出题人：Payne
 - 类型：Crypto
 - 关键字：SM3、爆破
 - Flag：`HSCTF{C00l_Sm3_Cr@cker}`
