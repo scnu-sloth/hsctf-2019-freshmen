@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BuyRace</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .center {
+            text-align: center;
+        }
+        .box {
+            max-width: 30rem;
+            padding: 3rem;
+            margin: 0 auto;
+            border-radius: 6px;
+            box-shadow: 0 2px 3px rgba(10,10,10,.1),0 0 0 1px rgba(10,10,10,.1);
+            background-color: hsl(0, 0%, 97%);
+        }
+        .box p {
+            font-size: xx-large;
+        }
+        .tip {
+            font-size: 2rem;
+        }
+        #buyBtn {
+            font-size: xx-large;
+        }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <h1>买积分换flag</h1>
+        <div class="main">
+            <div class="box">
+                <p>1积分</p>
+                <p>售价500</p>
+                <button id="buyBtn">购买</button>
+            </div>
+        </div>
+        <p class="tip">余额 {{ .Balance }}</p>
+        <p class="tip">距离获得Flag还差 {{ .Count }}分</p>
+        <form method="POST" action="/start">
+            <input type="submit" value="重头再来" >
+        </form>
+    </div>
+
+<script>
+    const $btn = document.getElementById('buyBtn');
+    $btn.addEventListener('click', ev => {
+        ev.preventDefault();
+	$btn.disabled = true;
+        fetch('/buy1', {
+            credentials: "same-origin"
+        }).then(res => res.json())
+            .then(json => {
+                console.log(json);
+                alert(json.msg);
+		$btn.disabled = false;
+                window.location.reload()
+            })
+    })
+</script>
+</body>
+</html>
