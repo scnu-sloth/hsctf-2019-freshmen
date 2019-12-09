@@ -1,0 +1,13 @@
+\x00                      exit
+\x01\x00\x00              mov %reg,%reg
+\x02\x00\x00              mov (%reg),%reg                            
+\x03\x00\x00\x00\x00\x00  mov $dword,%reg
+\x04\x00\x00              add %reg,%reg
+\x05\x00\x00              sub %reg,%reg
+\x06\x00\x00              mul %reg,%reg
+\x07\x00\x00              div %reg,%reg
+\x08\x00\x00              mod %reg,%reg
+\x09\x00                  inc %reg
+\x0A\x00\x01              cmp %reg,%reg
+\x0B\x00                  jnz exit
+\x0C                      tag = 1

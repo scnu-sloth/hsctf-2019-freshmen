@@ -1,0 +1,32 @@
+//   disassembly
+//   start vm
+"\x03\x00\x00\x00\x00\x00"  // mov $0,%%reg0
+"\x03\x00\x00\x00\x00\x01"  // mov $0,%%reg1
+"\x03\x00\x00\x00\x00\x02"  // mov $0,%%reg2
+"\x03\xe3\x07\x00\x00\x03"  // mov $2019,%%reg3
+"\x03\x25\x5b\x00\x00\x04"  // mov $23333,%%reg4
+"\x03\x91\xe5\x25\x01\x05"  // mov $19260817,%%reg5
+"\x03\x7f\x00\x00\x00\x06"  // mov $127,%%reg6
+"\x03\x18\x00\x00\x00\x07"  // mov $24,%%reg7
+//   check
+"\x02\x02\x00"  // mov (%%reg2),%%reg0
+"\x09\x02"      // inc %%reg2
+"\x01\x03\x01"  // mov %%reg3,%%reg1
+"\x06\x04\x01"  // mul %%reg4,%%reg1
+"\x04\x05\x01"  // add %%reg5,%%reg1
+"\x08\x06\x01"  // mod %%reg6,%%reg1
+"\x01\x01\x03"  // mov %%reg1,%%reg3
+"\x0A\x00\x01"  // cmp %reg0,%reg1
+"\x0B\x0A"      // jnz exit
+"\x0A\x02\x07"  // cmp %reg2,%reg7
+"\x0B\xde"      // jnz check
+"\x0C"          // tag = 1
+//   end vm
+"\x00\x00";
+
+//   decompilation
+random = 2019
+for i in range(24):
+    random = (random * 23333 + 19260817) % 127
+    assest(dest[i] == random)
+    
