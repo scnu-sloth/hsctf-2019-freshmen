@@ -1,0 +1,3 @@
+When the Simple Substitution Cipher is encrypted, each plaintext letter is replaced with a letter that uniquely corresponds to it. The difference between it and the Caesar cipher is that the letters of its cipher alphabet are not simply shifted, but completely confusing, which makes it more difficult to crack than the Caesar cipher.
+So Here is your flag:
+HSCTF{s1mp13_subs71tut10n_1s_s1mp1e}

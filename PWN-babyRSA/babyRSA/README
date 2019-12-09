@@ -1,0 +1,9 @@
+# build
+cd ./ctf_xinetd
+docker build -t <iname> .
+docker run -d -p <pubport>:9999 --name <cname> <iname>
+
+# hint
+1. r2w
+2. .data
+3. '97aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'

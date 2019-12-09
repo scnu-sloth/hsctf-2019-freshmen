@@ -1,0 +1,8 @@
+# build
+cd ./ctf_xinetd
+docker build -t <iname> .
+docker run -d -p <pubport>:9999 --name <cname> <iname>
+
+# hint
+1. just shellcode !
+2. 0xffff.one will tell you all !
